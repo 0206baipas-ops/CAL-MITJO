@@ -1,76 +1,81 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="cat">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAL MITJÓ - Mitjons Artesanals i Ecològics</title>
-
-  <!-- Importem la tipografia original -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Helvetica+Neue&display=swap" rel="stylesheet">
-
-  <!-- Enllaç amb el full d’estils extern -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"/>
+    <title>CAL MITJÓ</title>
+    <meta name="author" content="Paula Baiges i Oriol Vendrell">
+    <link rel="icon" href="./logo.aroma.png"> 
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/rwq5qki.css">
 </head>
-<body>
 
-  <!-- ========================= HEADER  HOLA HOLA========================= -->
+<body>
   <header>
-    <h1 class="zara-font">CAL MITJÓ</h1>
-    <p>Mitjons artesanals i ecològics</p>
+    <header class="main-header">
+      <nav class="header-nav">
+        <ul class="menu menu-left">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">DONA</a></li>
+          <li><a href="#">COL·LECCIONS</a></li>
+          <li><a href="#">CAL MITJONET</a></li>
+        </ul>
+        <div class="logo-center">
+          <img src="img/logo Cal mitjó web.png" alt="Logo Cal Mitjó" class="logo-img">
+        </div>
+        <ul class="menu menu-right">
+          <li><a href="#">COMPTE</a></li>
+          <li><a href="#">AJUDA</a></li>
+          <li><a href="#">CERCA</a></li>
+          <li><a href="#">CISTELLA</a></li>
+        </ul>
+      </nav>
   </header>
 
-  <!-- ========================= CONTINGUT PRINCIPAL ========================= -->
-  <main class="container">
-    
-    <!-- Secció d’inici -->
-    <section id="home">
-      <h2 class="zara-font">Benvinguts</h2>
-      <p>Mitjons fets a mà, sostenibles i elegants. Cada parell està creat amb cura i respecte pel medi ambient.</p>
-      <a href="#collections" class="btn">Descobreix més</a>
-    </section>
-
-    <!-- Secció de col·leccions -->
-    <section id="collections" class="bg-light">
-      <h2 class="zara-font">Col·leccions</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/400x400?text=Ecofest" alt="Col·lecció Ecofest">
-        <img src="https://via.placeholder.com/400x400?text=Calaix+Secret" alt="Calaix Secret">
-        <img src="https://via.placeholder.com/400x400?text=Esport" alt="Mitjons Esportius">
-        <img src="https://via.placeholder.com/400x400?text=Relax" alt="Mitjons Relax">
-      </div>
-    </section>
-
-    <!-- Secció de personalització -->
-    <section id="custom">
-      <h2 class="zara-font">Personalitza els teus  jliojidahsiljs bdskjhs mitjons</h2>
-      <p>Escull colors i patrons per crear el teu propi disseny únic.</p>
-      <a href="#" class="btn">Comença ara</a>
-    </section>
-
-    <!-- Secció CAL MITJONET -->
-    <section id="kids" class="bg-tertiary">
-      <h2 class="zara-font">CAL MITJONET</h2>
-      <p>Mitjons divertits i ecològics per als més petits.</p>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/400x400?text=Nens+1" alt="Mitjons per nens 1">
-        <img src="https://via.placeholder.com/400x400?text=Nens+2" alt="Mitjons per nens 2">
-      </div>
-    </section>
-
-    <!-- Secció de subscripció -->
-    <section id="subscribe">
-      <h2 class="zara-font">10% de Descompte</h2>
-      <p>Subscriu-te i aconsegueix un 10% de descompte en la teva primera compra.</p>
-      <input type="email" placeholder="El teu correu" class="input-mail">
-      <button class="btn">Subscriu-me</button>
-    </section>
-
+  <main>
+    <div class="img-container">
+      <img src="img/principal.jpg" alt="Imatge gran" class="main-img">
+    </div>
   </main>
 
-  <!-- ========================= PEU DE PÀGINA ========================= -->
-  <footer>
-    <p>© 2025 CAL MITJÓ · Tots els drets reservats</p>
-  </footer>
+  <div class="cercador-container">
+    <!-- Cercador -->
+    <div class="search-bar">
+      <img src="img/lupa.png" alt="Icona de lupa" class="lupa-icon"> <!-- Imatge de la lupa -->
+      <span>CERCA</span>
+      <div class="underline"></div>
+      <img src="img/felxa avall.png" alt="Fletxa avall" class="arrow-icon"> <!-- Imatge de la fletxa avall -->
+    </div>
+  </div>
 
+  <footer class="main-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <p>BOTIGUES</p>
+      </div>
+      <div class="footer-col">
+        <p>POLÍTICA DE PRIVADESA<br>TERMES</p>
+      </div>
+      <div class="footer-col">
+        <p>DEVOLUCIONS<br>SEGUIMENT DE COMANDA<br>FAQ<br>CONTACTE</p>
+      </div>
+      <div class="footer-col">
+        <p><strong>SUBSCRIU-TE</strong><br>
+        CONNECTA AMB NOSALTRES I<br>
+        CAMINA AL DIA AMB CAL MITJÓ</p>
+        <form class="footer-form">
+          <input type="email" placeholder="Correu electrònic">
+          <button type="submit">ACCEDIR</button>
+          <div class="footer-policy">
+            <input type="checkbox" id="policy">
+            <label for="policy">I agree to receive content from Cal Mitjó via email and have read and accept the Privacy Policy.</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-brand">
+      CAL MITJÓ
+    </div>
+  </footer>
 </body>
 </html>
