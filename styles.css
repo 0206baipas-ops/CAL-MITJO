@@ -1,14 +1,21 @@
 /* =====================================================
    CAL MITJÓ - Full d’estils principal
-   Estil net, minimalista i inspirat en la marca original
+   He integrat la secció de fotos replicant la maqueta:
+   - fons de secció = --secondary (#EDEDED)
+   - títols "→HOME" i "ELS + CLÀSSICS" = --primary (#3E4E50)
+   - el marc de cada foto usa img/quadre.png (background)
+   - exposada la variable --frame-padding per ajustar encaix
 ===================================================== */
 
 /* ---------- COLORS CORPORATIUS ---------- */
 :root {
-    --primary: #3E4E50; /* Daurat */
-    --secondary: #EDEDED; /* Gris fosc elegant */
+    --primary: #3E4E50; /* color dels títols i textos importants */
+    --secondary: #EDEDED; /* color de fons de la secció de fotos */
     --tertiary: #e6a955;
     --quaternary: #B8DBD9; /* Verd aigua clar */
+
+    /* Padding interior del marc: ajusta per alinear la foto dins img/quadre.png */
+    --frame-padding: 36px;
 }
 
 /* ---------- ESTILS BASE ---------- */
@@ -139,12 +146,10 @@ body {
         position: static;
     }
 
-    /* Mostrar botó (logo-hamburguesa) a l'esquerra */
     .menu-toggle {
         display: block;
     }
 
-    /* Centra el logo visualment però mantenint la hamburguesa a l'esquerra */
     .logo-center {
         position: static;
         transform: none;
@@ -152,7 +157,6 @@ body {
         pointer-events: auto;
     }
 
-    /* Amaga els menús de la barra per defecte; els mostrarem en obrir */
     .menu-left, .menu-right {
         display: none;
     }
@@ -161,7 +165,6 @@ body {
         max-height: 80px;
     }
 
-    /* Overlay mòbil amb els enllaços quan s'obre el menú */
     .mobile-menu {
         display: none;
     }
@@ -205,7 +208,6 @@ body {
         background: transparent;
     }
 
-    /* Petita capsa per tancar visualment o per deixar el focus clar */
     .header-nav.open .menu-toggle {
         left: 20px;
         top: 20px;
@@ -213,6 +215,7 @@ body {
     }
 }
 
+/* ---------- BANNER / IMATGES PRINCIPALS ---------- */
 .img-container {
     position: relative;
     width: 100%;
@@ -226,7 +229,6 @@ body {
     z-index: 1;
 }
 
-
 .main-img {
     width: 100%;
     height: 150%;
@@ -238,15 +240,13 @@ body {
     z-index: 1;
 }
 
-
-
 /* ---------- PEU DE PÀGINA ---------- */
 .main-footer {
     background: var(--secondary);
     padding: 40px 60px 60px;
     color: var(--primary);
     margin-top: 60px;
-    flex-shrink: 0; /* Evita que el peu es redueixi */
+    flex-shrink: 0;
 }
 
 .footer-columns {
@@ -263,11 +263,6 @@ body {
     font-size: 13px;
     font-weight: 400;
     line-height: 1.3;
-}
-
-.footer-col strong {
-    font-weight: 700;
-    font-size: 1.25em;
 }
 
 .footer-form {
@@ -327,7 +322,7 @@ body {
     font-weight: 400;
     padding: 18px 0;
     letter-spacing: 2px;
-    z-index: 5; /* Reduït per evitar conflicte amb el .login-overlay */
+    z-index: 5;
 }
 
 /* ---------- ESTILS DE CERCA ---------- */
@@ -339,39 +334,44 @@ body {
   background-color: var(--secondary);
 }
 
-
 .lupa-icon {
-    width: 30px;  /* Ajusta el tamany que vulguis */
+    width: 30px;
     height: 30px;
     vertical-align: middle;
     margin-left: 200px;
 }
 
 .arrow-icon {
-    width: 25px;  /* Una mica més petita per la fletxa */
+    width: 25px;
     height: 25px;
     vertical-align: middle;
-
 }
 
 .barra{
-    width: 105px;  /* Una mica més petita per la fletxa */
+    width: 105px;
     height: 105px;
     vertical-align: middle;
 }
 
-
-/* ---------- RESPONSIVITAT FOOTER ---------- */
-@media (max-width: 900px) {
-    .footer-columns {
-        flex-direction: column;
-        gap: 1.5rem;
-        max-width: 95vw;
-    }
-    .footer-col {
-        font-size: 1.1rem;
-    }
-    .main-footer {
-        padding: 40px 20px 0;
-    }
+/* ---------- SECCIÓ FOTOS (REPLICANT MAQUETA) ---------- */
+.photos-section {
+  width: 100%;
+  background: var(--secondary); /* fons clar sol·licitat */
+  padding: 1.25rem 0 2.25rem;
+  box-sizing: border-box;
 }
+
+/* Contenidor central (marges similars a maqueta) */
+.photos-section .container {
+  max-width: 1280px;
+}
+
+/* Títols a cada costat amb color primari */
+.photos-section .section-title {
+  font-size: 28px;
+  color: var(--primary);
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin: 0;
+}
+
