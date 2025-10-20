@@ -50,6 +50,26 @@ body {
     padding: 0 60px;
 }
 
+/* ---------- BOTÓ HAMBURGUESA (LOGO) ---------- */
+.menu-toggle {
+    display: none; /* visible només en mòbil */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 60;
+}
+.menu-toggle img {
+    width: 56px;
+    height: auto;
+    display: block;
+}
+
+/* ---------- MENÚ ---------- */
 .menu {
     display: flex;
     gap: 3rem;
@@ -118,29 +138,85 @@ body {
         padding: 1rem 0;
         position: static;
     }
+
+    /* Mostrar botó (logo-hamburguesa) a l'esquerra */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Centra el logo visualment però mantenint la hamburguesa a l'esquerra */
     .logo-center {
         position: static;
         transform: none;
         margin: 1rem 0;
         pointer-events: auto;
     }
+
+    /* Amaga els menús de la barra per defecte; els mostrarem en obrir */
     .menu-left, .menu-right {
-        justify-content: center;
-        margin: 0.5rem 0;
-        flex-wrap: wrap;
+        display: none;
     }
-    .menu a {
-        line-height: 1;
-    }
+
     .logo-img {
         max-height: 80px;
+    }
+
+    /* Overlay mòbil amb els enllaços quan s'obre el menú */
+    .mobile-menu {
+        display: none;
+    }
+
+    .header-nav.open .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary);
+        z-index: 50;
+        padding-top: 140px;
+        box-sizing: border-box;
+    }
+
+    .header-nav.open .mobile-menu-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .mobile-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    .mobile-list a {
+        font-size: 1.05rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+        padding: 0.6rem 1.2rem;
+        display: inline-block;
+        background: transparent;
+    }
+
+    /* Petita capsa per tancar visualment o per deixar el focus clar */
+    .header-nav.open .menu-toggle {
+        left: 20px;
+        top: 20px;
+        transform: none;
     }
 }
 
 .img-container {
     position: relative;
     width: 100%;
-    height: 550px;
+    height: 620px;
     margin: 0;
     background: var(--quaternary);
     display: flex;
@@ -153,7 +229,7 @@ body {
 
 .main-img {
     width: 100%;
-    height: 100%;
+    height: 150%;
     object-fit: cover;
     opacity: 0.7;
     position: absolute;
@@ -162,20 +238,6 @@ body {
     z-index: 1;
 }
 
-
-.img-content {
-    position: relative;
-    z-index: 3;
-    font-weight: 400;
-    font-size: 5rem;
-    color: #3E4E50;
-    background: rgba(237, 237, 237, 0.6);
-    padding: 0.5em 1.2em;
-    border-radius: 6px;
-    text-align: center;
-    transition: font-weight 0.2s;
-    cursor: pointer;
-}
 
 
 /* ---------- PEU DE PÀGINA ---------- */
@@ -271,27 +333,33 @@ body {
 /* ---------- ESTILS DE CERCA ---------- */
 .cercador-container {
   padding: 20px 0;
-  text-align: center;
+  font-size: 30px;
+  text-align: left;
+  vertical-align: middle;
   background-color: var(--secondary);
 }
+
+
 .lupa-icon {
-    width: 16px;  /* Ajusta el tamany que vulguis */
-    height: 16px;
+    width: 30px;  /* Ajusta el tamany que vulguis */
+    height: 30px;
     vertical-align: middle;
+    margin-left: 200px;
 }
 
 .arrow-icon {
-    width: 12px;  /* Una mica més petita per la fletxa */
-    height: 12px;
-    vertical-align: right;
+    width: 25px;  /* Una mica més petita per la fletxa */
+    height: 25px;
+    vertical-align: middle;
+
 }
 
-.underline {
-  border-bottom: 1px solid #4A4A4A;
-  align-items: center;
-  width: 50%;
-  margin-top: -5px;
+.barra{
+    width: 105px;  /* Una mica més petita per la fletxa */
+    height: 105px;
+    vertical-align: middle;
 }
+
 
 /* ---------- RESPONSIVITAT FOOTER ---------- */
 @media (max-width: 900px) {

@@ -13,22 +13,30 @@
 <body>
   <header>
     <header class="main-header">
-      <nav class="header-nav">
+      <nav class="header-nav" role="navigation" aria-label="Menú principal">
+        <!-- Botó hamburguesa (logo) visible només en pantalles petites -->
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Obrir menú">
+          <img src="img/logo Cal mitjó web.png" alt="Logo Cal Mitjó">
+        </button>
+
         <ul class="menu menu-left">
           <li><a href="#">HOME</a></li>
           <li><a href="#">DONA</a></li>
           <li><a href="#">COL·LECCIONS</a></li>
           <li><a href="#">CAL MITJONET</a></li>
         </ul>
+
         <div class="logo-center">
           <img src="img/logo Cal mitjó web.png" alt="Logo Cal Mitjó" class="logo-img">
         </div>
+
         <ul class="menu menu-right">
           <li><a href="#">COMPTE</a></li>
           <li><a href="#">AJUDA</a></li>
           <li><a href="#">CERCA</a></li>
           <li><a href="#">CISTELLA</a></li>
         </ul>
+
       </nav>
   </header>
 
@@ -42,9 +50,14 @@
     <!-- Cercador -->
       <img src="img/lupa.png" alt="Icona de lupa" class="lupa-icon"> <!-- Imatge de la lupa -->
       <span>CERCA</span>
-      <div class="underline"></div>
       <img src="img/felxa avall.png" alt="Fletxa avall" class="arrow-icon"> <!-- Imatge de la fletxa avall -->
   </div>
+
+  <main>
+    <div class="img-container">
+      <img src="img/portada home.jpg" alt="Imatge gran" class="main-img">
+    </div>
+  </main>
 
   <footer class="main-footer">
     <div class="footer-columns">
