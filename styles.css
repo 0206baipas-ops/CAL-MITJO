@@ -359,7 +359,6 @@ body {
 .col-sections .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0; /* Sense padding addicional dins del container */
 }
 
 .home-section .section-head,
@@ -367,6 +366,7 @@ body {
 .col-sections .section-head {
     display: flex;
     align-items: center;
+    padding: 30px;
     margin-bottom: 1rem;
 }
 
@@ -409,8 +409,8 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;        /* ← CENTRE VERTICAL */
+    align-items: center;            /* ← CENTRE HORITZONTAL */
     position: relative;
     height: 570px;
 }
@@ -421,6 +421,15 @@ body {
     max-height: 70%;
     object-fit: contain;
     display: block;
+    margin: 0 auto;
+}
+
+/* NOMÉS FOTOS DE DONA AL CENTRE PERFECTE */
+.dona-centered {
+    width: 80% !important;       /* ← PROVA 80% */
+    height: 80% !important;
+    max-width: 80% !important;
+    max-height: 80% !important;
 }
 
 .photo-item {
@@ -429,10 +438,10 @@ body {
 }
 
 .sizes {
-    font-size: 25px;
+    font-size: 19px;
     color: #FFFFFF;
     position: absolute;
-    bottom: 10px;
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%);
 }
