@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="cat">
 <head>
+  <!-- Metadades bàsiques de la pàgina -->
   <meta charset="utf-8"/>
   <title>CAL MITJÓ</title>
   <meta name="author" content="Paula Baiges i Oriol Vendrell">
-  <link rel="icon" href="./logo.aroma.png">
+  <link rel="icon" href="./logo.aroma.png"> <!-- Icona de la pestanya del navegador -->
+  <!-- Bootstrap per estil i responsivitat -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- El teu fitxer CSS personalitzat -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Fes la pàgina responsive en mòbil/tablet -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts personalitzades d'Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/rwq5qki.css">
 </head>
 <body>
+  <!-- Capçalera principal amb menú -->
   <header class="main-header">
     <nav class="header-nav" role="navigation" aria-label="Menú principal">
+      <!-- Botó per obrir/desplegar menú en mòbil -->
       <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Obrir menú">
         <img src="img/logo Cal mitjo.png" alt="Logo Cal Mitjó">
       </button>
+      <!-- Menú de navegació (esquerra) amb seccions principals -->
       <ul class="menu menu-left">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">DONA</a></li>
-        <li><a href="#">COL·LECCIONS</a></li>
-        <li><a href="#">CAL MITJONET</a></li>
+        <li><a href="#">HOME</a></li>         <!-- Enllaç a la portada/principal -->
+        <li><a href="#DONA">DONA</a></li>     <!-- Enllaç a la secció dona -->
+        <li><a href="#">COL·LECCIONS</a></li> <!-- Enllaç a col·leccions -->
+        <li><a href="#">CAL MITJONET</a></li> <!-- Enllaç a Cal Mitjonet -->
       </ul>
+      <!-- Logo centrat al menú -->
       <div class="logo-center">
         <img src="img/logo Cal mitjo.png" alt="Logo Cal Mitjó" class="logo-img">
       </div>
+      <!-- Menú de navegació (dreta) amb opcions d'usuari i compra -->
       <ul class="menu menu-right">
-        <li><a href="#">COMPTE</a></li>
-        <li><a href="#">AJUDA</a></li>
-        <li><a href="#">CERCA</a></li>
-        <li><a href="#">CISTELLA</a></li>
+        <li><a href="#">COMPTE</a></li>   <!-- Accés al compte d'usuari -->
+        <li><a href="#">AJUDA</a></li>    <!-- Ajuda -->
+        <li><a href="#">CERCA</a></li>    <!-- Cerca -->
+        <li><a href="#">CISTELLA</a></li> <!-- Cistella de compra -->
       </ul>
     </nav>
   </header>
+  
+  <!-- Imatge principal de portada/home -->
   <main>
     <div class="img-container">
       <img src="img/principal.jpg" alt="Imatge gran" class="main-img">
     </div>
   </main>
+  
+  <!-- Cercador amb icona de lupa i fletxa avall (search bar) -->
   <div class="cercador-container">
     <img src="img/lupa.png" alt="Icona de lupa" class="lupa-icon">
     <input type="text" placeholder="CERCA" class="search-input">
     <img src="img/fletxaavall.png" alt="Fletxa avall" class="arrow-icon">
   </div>
+  
+  <!-- Secció d'inici de sessió (login) per a usuaris -->
   <section class="login-section">
     <div class="container py-4">
       <h2>Inicieu sessió</h2>
       <p>Si us plau, introdueix el teu correu i contrasenya:</p>
-      <a href="#">No tens compte? Crear compte</a>
+      <a href="#">No tens compte? Crear compte</a> <!-- Enllaç per registrar-se -->
       <form class="login-form">
         <input type="email" placeholder="Correu electrònic">
         <input type="password" placeholder="Contrasenya">
@@ -56,170 +72,186 @@
       </form>
     </div>
   </section>
+  
+  <!-- Imatge de portada per la secció HOME -->
   <main>
     <div class="img-container">
       <img src="img/portada home.jpg" alt="Imatge gran" class="main-img">
     </div>
   </main>
+  
+  <!-- Secció HOME amb productes clàssics -->
   <section class="photos-section home-section">
-      <div class="section-head">
-        <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
-        <h2 class="section-title">HOME</h2>
-        <h2 class="section-title">ELS + CLÀSSICS</h2>
+    <div class="section-head">
+      <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
+      <h2 class="section-title">HOME</h2>
+      <h2 class="section-title">ELS + CLÀSSICS</h2>
+    </div>
+    <div class="row g-4">
+      <!-- Productes clàssics de Cal Mitjó -->
+      <!-- Cada 'photo-item' és un producte amb la seva foto i talles -->
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
+          </div>
+          <p class="sizes">40 41 42 43 44 45</p>
+        </div>
       </div>
-      <div class="row g-4">
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      <!-- Repetit per cada producte -->
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/mitjo-image.png" alt="Imatge del mitjó">
           </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/mitjo-image.png" alt="Imatge del mitjó">
-            </div>
-            <p class="sizes">40 41 42 43 44 45</p>
-          </div>
+          <p class="sizes">40 41 42 43 44 45</p>
         </div>
       </div>
     </div>
   </section>
+  
+  <!-- Imatge de portada per la secció DONA -->
   <main>
     <div class="img-container">
       <img src="img/portada dona.jpg" alt="Imatge gran" class="main-img">
     </div>
   </main>
+  
+  <!-- Secció DONA amb productes -->
   <section class="photos-section dona-section">
     <div class="section-head">
-        <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
-        <h2 class="section-title">DONA</h2>
-        <h2 class="section-title">LES + CLÀSSIQUES</h2>
+      <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
+      <h2 class="section-title">DONA</h2>
+      <h2 class="section-title">LES + CLÀSSIQUES</h2>
+    </div>
+    <div class="row g-4">
+      <!-- Productes de dona amb la seva foto i talles -->
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona1.jpg" alt="Foto dona">
+          </div>
+          <p class="sizes">37 38 39 40 41 42</p>
+        </div>
       </div>
-      <div class="row g-4">
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona1.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona2.jpg" alt="Foto dona">
           </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona2.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona3.jpg" alt="Foto dona">
           </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona3.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona4.jpg" alt="Foto dona">
           </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona4.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona5.jpg" alt="Foto dona">
           </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona5.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona6.jpg" alt="Foto dona">
           </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona6.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona7.jpg" alt="Foto dona">
           </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona7.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="photo-item">
+          <div class="photo-frame">
+            <img src="img/placeholder-dona8.jpg" alt="Foto dona">
           </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-              <img src="img/placeholder-dona8.jpg" alt="Foto dona">
-            </div>
-            <p class="sizes">37 38 39 40 41 42</p>
-          </div>
+          <p class="sizes">37 38 39 40 41 42</p>
         </div>
       </div>
     </div>
   </section>
+  
+  <!-- Secció COL·LECCIONS (pots afegir més contingut aquí) -->
   <section class="photos-section col-sections">
     <div class="container py-4">
       <div class="section-head">
         <h2 class="section-title">COL·LECCIONS</h2>
+      </div>
+      <!-- Aquí pots afegir col·leccions especials o temporades -->
     </div>
   </section>
+  
+  <!-- Peu de pàgina amb informació, enllaços i subscripció -->
   <footer class="main-footer">
     <div class="footer-columns">
       <div class="footer-col"><p>BOTIGUES</p></div>
@@ -239,6 +271,8 @@
     </div>
     <div class="footer-brand">CAL MITJÓ</div>
   </footer>
+  
+  <!-- JS personalitzat i Bootstrap JS -->
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
