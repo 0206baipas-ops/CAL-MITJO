@@ -14,6 +14,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Fonts personalitzades d'Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/rwq5qki.css">
+  <!-- Scroll suau per a navegació d'anclatges -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <!-- Capçalera principal amb menú -->
@@ -25,10 +31,14 @@
       </button>
       <!-- Menú de navegació (esquerra) amb seccions principals -->
       <ul class="menu menu-left">
-        <li><a href="#">HOME</a></li>         <!-- Enllaç a la portada/principal -->
-        <li><a href="#DONA">DONA</a></li>     <!-- Enllaç a la secció dona -->
-        <li><a href="#">COL·LECCIONS</a></li> <!-- Enllaç a col·leccions -->
-        <li><a href="#">CAL MITJONET</a></li> <!-- Enllaç a Cal Mitjonet -->
+        <!-- Enllaç a la secció HOME -->
+        <li><a href="#home-section">HOME</a></li>
+        <!-- Enllaç a la secció DONA -->
+        <li><a href="#dona-section">DONA</a></li>
+        <!-- Enllaç a la secció COL·LECCIONS -->
+        <li><a href="#colleccions-section">COL·LECCIONS</a></li>
+        <!-- CAL MITJONET no existeix com a secció, enllaç deshabilitat -->
+        <li><a href="#">CAL MITJONET</a></li>
       </ul>
       <!-- Logo centrat al menú -->
       <div class="logo-center">
@@ -36,30 +46,34 @@
       </div>
       <!-- Menú de navegació (dreta) amb opcions d'usuari i compra -->
       <ul class="menu menu-right">
-        <li><a href="#">COMPTE</a></li>   <!-- Accés al compte d'usuari -->
-        <li><a href="#">AJUDA</a></li>    <!-- Ajuda -->
-        <li><a href="#">CERCA</a></li>    <!-- Cerca -->
-        <li><a href="#">CISTELLA</a></li> <!-- Cistella de compra -->
+        <!-- COMPTE: ancorat a la secció de login -->
+        <li><a href="#login-section">COMPTE</a></li>
+        <!-- AJUDA: no existeix com a secció, enllaç deshabilitat -->
+        <li><a href="#">AJUDA</a></li>
+        <!-- CERCA: ancorat al cercador -->
+        <li><a href="#cercador-section">CERCA</a></li>
+        <!-- CISTELLA: no existeix com a secció, enllaç deshabilitat -->
+        <li><a href="#">CISTELLA</a></li>
       </ul>
     </nav>
   </header>
   
-  <!-- Imatge principal de portada/home -->
+  <!-- Imatge principal de portada/home (no anclada al menú) -->
   <main>
     <div class="img-container">
       <img src="img/principal.jpg" alt="Imatge gran" class="main-img">
     </div>
   </main>
   
-  <!-- Cercador amb icona de lupa i fletxa avall (search bar) -->
-  <div class="cercador-container">
+  <!-- Cercador amb icona de lupa i fletxa avall -->
+  <div class="cercador-container" id="cercador-section">
     <img src="img/lupa.png" alt="Icona de lupa" class="lupa-icon">
     <input type="text" placeholder="CERCA" class="search-input">
     <img src="img/fletxaavall.png" alt="Fletxa avall" class="arrow-icon">
   </div>
   
   <!-- Secció d'inici de sessió (login) per a usuaris -->
-  <section class="login-section">
+  <section class="login-section" id="login-section">
     <div class="container py-4">
       <h2>Inicieu sessió</h2>
       <p>Si us plau, introdueix el teu correu i contrasenya:</p>
@@ -81,7 +95,7 @@
   </main>
   
   <!-- Secció HOME amb productes clàssics -->
-  <section class="photos-section home-section">
+  <section class="photos-section home-section" id="home-section">
     <div class="section-head">
       <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
       <h2 class="section-title">HOME</h2>
@@ -89,7 +103,6 @@
     </div>
     <div class="row g-4">
       <!-- Productes clàssics de Cal Mitjó -->
-      <!-- Cada 'photo-item' és un producte amb la seva foto i talles -->
       <div class="col-6 col-md-3">
         <div class="photo-item">
           <div class="photo-frame">
@@ -98,7 +111,7 @@
           <p class="sizes">40 41 42 43 44 45</p>
         </div>
       </div>
-      <!-- Repetit per cada producte -->
+      <!-- ...repetit per cada producte... -->
       <div class="col-6 col-md-3">
         <div class="photo-item">
           <div class="photo-frame">
@@ -166,7 +179,7 @@
   </main>
   
   <!-- Secció DONA amb productes -->
-  <section class="photos-section dona-section">
+  <section class="photos-section dona-section" id="dona-section">
     <div class="section-head">
       <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
       <h2 class="section-title">DONA</h2>
@@ -242,7 +255,7 @@
   </section>
   
   <!-- Secció COL·LECCIONS (pots afegir més contingut aquí) -->
-  <section class="photos-section col-sections">
+  <section class="photos-section col-sections" id="colleccions-section">
     <div class="container py-4">
       <div class="section-head">
         <h2 class="section-title">COL·LECCIONS</h2>
