@@ -47,14 +47,34 @@ body {
     z-index: 10;
 }
 
+.main-header.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Requadre més estret quan es baixa */
+}
+
 .header-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Comportament original */
     width: 100%;
     height: 100px;
     position: relative;
     box-sizing: border-box;
+}
+
+.main-header.fixed-header .header-nav {
+    justify-content: space-between; /* Manté l'espaiat original entre menús */
+    align-items: center; /* Centra verticalment els elements */
+    height: 60px; /* Ajusta l'alçada del contenidor fix */
+    padding: 0; /* Elimina padding addicional per mantenir posició */
+    max-width: 1200px; /* Limita l'amplada per centrar el conjunt */
+    margin: 0 auto; /* Centra el contenidor dins del requadre */
 }
 
 /* ---------- BOTÓ HAMBURGUESA (LOGO) ---------- */
@@ -107,6 +127,17 @@ body {
     font-weight: 700;
 }
 
+.main-header.fixed-header .menu-left,
+.main-header.fixed-header .menu-right {
+    gap: 1.5rem; /* Redueix l'espai entre elements en mode fix */
+    align-items: center; /* Assegura alineació vertical */
+}
+
+.main-header.fixed-header .menu a {
+    font-size: 14px; /* Redueix una mica la mida del text en mode fix */
+}
+
+/* Logo i canvi d'imatge */
 .logo-center {
     position: absolute;
     left: 50%;
@@ -116,7 +147,8 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 2;
-    pointer-events: none;
+    pointer-events: auto; /* CLIQUEABLE SEMPRE */
+    transition: all 0.5s ease;
 }
 
 .logo-img {
@@ -124,6 +156,29 @@ body {
     background: none;
     margin-bottom: 0;
     z-index: 3;
+    display: block; /* Per defecte visible */
+}
+
+.logo-img-scroll {
+    max-height: 146px; /* Ajusta segons la nova imatge */
+    background: none;
+    margin-bottom: 0;
+    z-index: 3;
+    display: none; /* Amagat per defecte, es mostra en scroll */
+}
+
+.main-header.fixed-header .logo-img {
+    display: none; /* Amaga el logo original en mode fix */
+}
+
+.main-header.fixed-header .logo-img-scroll {
+    display: block; /* Mostra el logo de scroll en mode fix */
+    max-height: 40px; /* Ajusta la mida del logo en mode fix */
+}
+
+.main-header.fixed-header .logo-center {
+    top: 50%; /* Manté el logo centrat verticalment en mode fix */
+    transform: translate(-50%, -50%);
 }
 
 /* ---------- RESPONSIVITAT HEADER ---------- */
@@ -134,8 +189,18 @@ body {
     .header-nav {
         height: 100px;
     }
-    .logo-img {
+    .logo-img,
+    .logo-img-scroll {
         max-height: 120px;
+    }
+    .main-header.fixed-header {
+        padding: 0 20px;
+    }
+    .main-header.fixed-header .header-nav {
+        max-width: 900px; /* Ajusta l'amplada màxima en pantalles petites */
+    }
+    .main-header.fixed-header .logo-center {
+        top: 50%;
     }
 }
 
@@ -165,8 +230,22 @@ body {
         display: none;
     }
 
-    .logo-img {
+    .logo-img,
+    .logo-img-scroll {
         max-height: 80px;
+    }
+
+    .main-header.fixed-header {
+        padding: 0 20px;
+        height: 50px; /* Requadre més estret en mòbil */
+    }
+    .main-header.fixed-header .logo-center {
+        position: static;
+        margin: 0.5rem 0;
+    }
+    .main-header.fixed-header .logo-img,
+    .main-header.fixed-header .logo-img-scroll {
+        max-height: 40px; /* Ajustat per mòbil */
     }
 
     .mobile-menu {
@@ -366,8 +445,8 @@ body {
 .col-sections .section-head {
     display: flex;
     align-items: center;
-    padding: 30px;
-    margin-bottom: 1rem;
+    padding: 30px; /* Restaura el padding original */
+    margin-bottom: 1rem; /* Restaura el marge inferior original */
 }
 
 .home-section .arrow-image,
@@ -383,7 +462,6 @@ body {
     font-size: 28px;
     color: var(--primary);
     font-weight: 800;
-    padding: 10px;
     margin: 0 10px; /* Espaiat mínim entre elements */
 }
 
@@ -404,7 +482,7 @@ body {
 /* Marc de foto */
 .photo-frame {
     background: url('img/quadre.png') no-repeat center center;
-    background-size: cover;
+    background-size: contain; /* Canvi de cover a contain per veure la imatge completa */
     padding: var(--frame-padding);
     box-sizing: border-box;
     display: flex;
@@ -437,13 +515,22 @@ body {
     position: relative;
 }
 
+/* Elimino les talles */
 .sizes {
-    font-size: 19px;
-    color: #FFFFFF;
-    position: absolute;
-    bottom: 75px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none; /* Treu la informació de les talles */
+}
+
+/* ---------- COL·LECCIONS - Efecte Hover ---------- */
+.collection-img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.collection-img:hover {
+    transform: scale(1.05); /* Augmenta lleugerament la mida */
 }
 
 /* ---------- PEU DE PÀGINA ---------- */
@@ -547,68 +634,7 @@ body {
 
 .img-fluid {
     width: 100%;
-    height: 700px;      /* Pots modificar aquesta alçada segons prefereixis */
-    object-fit: cover;  /* Fa que la imatge ompli el contenidor amb bona proporció */
+    height: 700px;
+    object-fit: cover;
     display: block;
-}
-
-.logo-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    /* pointer-events: none; ← ELIMINAR AQUESTA LÍNIA */
-    transition: all 0.5s ease; /* Animació suau per al moviment */
-}
-/* ---------- LOGO CENTER CORREGIT ---------- */
-.logo-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    pointer-events: auto; /* CLIQUEABLE SEMPRE */
-    transition: all 0.5s ease;
-}
-
-.logo-img {
-    max-height: 146px;
-    background: none;
-    margin-bottom: 0;
-    z-index: 3;
-}
-
-/* LOGO FLOTANT EFECTE */
-.logo-center.scrolled {
-    position: fixed;
-    left: 20px;
-    top: 10%;
-    transform: translateY(-50%);
-    z-index: 999;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 8px;
-}
-
-
-.logo-center.scrolled .logo-img {
-    max-height: 130px;
-}
-
-/* RESPONSIVITAT MOBILE */
-@media (max-width: 768px) {
-    .logo-center.scrolled {
-        left: 10px;
-        padding: 5px;
-    }
-    .logo-center.scrolled .logo-img {
-        max-height: 60px;
-    }
 }
