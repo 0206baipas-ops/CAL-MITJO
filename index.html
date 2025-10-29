@@ -11,276 +11,1153 @@
   <link rel="stylesheet" href="https://use.typekit.net/rwq5qki.css">
 </head>
 <body>
-  <header class="main-header">
+
+  <!-- ALERTA ÈXIT LOGIN -->
+  <div id="loginSuccessAlert" class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 d-none" style="z-index: 2000; max-width: 400px;">
+    <strong>Benvingut/da!</strong> Ja formes part de la nostra marca.
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+  </div>
+
+  <!-- HEADER ESCRIPTORI -->
+  <header class="main-header d-none d-lg-block">
     <nav class="header-nav" role="navigation" aria-label="Menú principal">
-      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Obrir menú">
-        <img src="img/logo Cal mitjo.png" alt="Logo Cal Mitjó">
-      </button>
-      <ul class="menu menu-left">
-        <li><a href="#home-section">HOME</a></li>
-        <!-- Enllaç a la secció DONA -->
-        <li><a href="#dona-section">DONA</a></li>
-        <!-- Enllaç a la secció COL·LECCIONS -->
-        <li><a href="#colleccions-section">COL·LECCIONS</a></li>
-        <!-- CAL MITJONET no existeix com a secció, enllaç deshabilitat -->
-        <li><a href="#">CAL MITJONET</a></li>
-      </ul>
-      <div class="logo-center" id="logoCenter">
-        <img src="img/logo Cal mitjo.png" alt="Logo Cal Mitjó" class="logo-img">
-        <img src="img/logo calmitjo horitzontal-30.png" alt="Logo Scroll" class="logo-img-scroll">
+      <div class="nav-inner">
+        <ul class="menu menu-left"></ul>
+        <div class="logo-center" id="logoCenter">
+          <img src="img/logo Cal mitjo.png" alt="Logo Cal Mitjó" class="logo-img">
+          <img src="img/logo calmitjo horitzontal-30.png" alt="Logo Scroll" class="logo-img-scroll">
+        </div>
+        <ul class="menu menu-right"></ul>
       </div>
-      <ul class="menu menu-right">
-       <li><a href="#login-section">COMPTE</a></li>
-        <!-- AJUDA: no existeix com a secció, enllaç deshabilitat -->
-        <li><a href="#">AJUDA</a></li>
-        <!-- CERCA: ancorat al cercador -->
+
+      <ul class="menu menu-left-absolute">
+        <li><a href="#home-section" data-offset="700">HOME</a></li>
+        <li><a href="#dona-section" data-offset="700">DONA</a></li>
+        <li><a href="#colleccions-section">COL·LECCIONS</a></li>
+        <li><a href="#calmitjonet-section" data-offset="700">CAL MITJONET</a></li>
+      </ul>
+
+      <ul class="menu menu-right-absolute">
+        <li><a href="#login-section">COMPTE</a></li>
+        <li><a href="#ajuda-section">AJUDA</a></li>
         <li><a href="#cercador-section">CERCA</a></li>
-        <!-- CISTELLA: no existeix com a secció, enllaç deshabilitat -->
-        <li><a href="#">CISTELLA</a></li>
+        <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#cistellaOffcanvas">CISTELLA</a></li>
       </ul>
     </nav>
   </header>
-   <!-- IMATGE PRINCIPAL -->
+
+  <!-- NAVBAR MÒBIL -->
+  <nav class="navbar navbar-expand-lg main-navbar-mobile d-lg-none fixed-top">
+    <div class="container-fluid px-3">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="img/logo calmitjo horitzontal-30.png" alt="Cal Mitjó" class="logo-mobile">
+      </a>
+      <div class="d-flex gap-3">
+        <a href="#cercador-section" data-offset="30"><img src="img/lupa.png" alt="Cerca" class="icon-sm"></a>
+        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#cistellaOffcanvas"><img src="img/cistella.png" alt="Cistella" class="icon-sm"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- OFFCANVAS MENÚ MÒBIL -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header">
+      <img src="img/logo calmitjo horitzontal-30.png" alt="Cal Mitjó" class="logo-offcanvas">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tancar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home-section" data-offset="700">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="#dona-section" data-offset="700">DONA</a></li>
+        <li class="nav-item"><a class="nav-link" href="#colleccions-section" data-offset="50">COL·LECCIONS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#calmitjonet-section" data-offset="700">CAL MITJONET</a></li>
+        <li class="nav-item"><a class="nav-link" href="#login-section" data-offset="30">COMPTE</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ajuda-section" data-offset="30">AJUDA</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cercador-section" data-offset="30">CERCA</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#cistellaOffcanvas">CISTELLA</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CISTELLA OFFCANVAS (millorat) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cistellaOffcanvas" aria-labelledby="cistellaLabel">
+    <div class="offcanvas-header border-bottom border-light-small">
+      <h5 class="offcanvas-title text-white" id="cistellaLabel">
+        <span>CISTELLA</span>
+        <small class="badge bg-tertiary ms-2">0 articles</small>
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Tancar"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="cistella-list">
+        <div class="cistella-empty text-center py-5">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-3 text-white-50">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0-.4 2m.4-2 1.6 6h9.6"/>
+          </svg>
+          <p class="text-white-50 mb-3">La teva cistella està buida</p>
+          <button class="btn btn-outline-light btn-sm px-4" id="continueShopping">Continuar comprant</button>
+        </div>
+      </div>
+      <div class="cistella-footer d-none">
+        <div class="p-3">
+          <div class="cistella-total mb-3">
+            <span class="total-text text-white fw-bold">SUBTOTAL</span>
+            <span class="total-preu text-tertiary fw-bold">0,00 €</span>
+          </div>
+          <button class="btn-finalitzar w-100">FINALITZAR COMPRA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUM DE COMPRA -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="resumOffcanvas" aria-labelledby="resumLabel">
+    <div class="offcanvas-header bg-secondary text-primary">
+      <h5 class="offcanvas-title" id="resumLabel">RESUM DE LA COMANDA</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tancar"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="resum-list"></div>
+      <div class="resum-footer">
+        <div class="resum-total mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Subtotal</span>
+            <span class="resum-subtotal">0,00 €</span>
+          </div>
+          <div class="d-flex justify-content-between text-tertiary fw-bold">
+            <span>TOTAL</span>
+            <span class="resum-total-preu">0,00 €</span>
+          </div>
+        </div>
+        <div class="resum-info p-3 bg-light-small">
+          <p class="mb-1"><strong>Enviament:</strong> Gratis a partir de 50€</p>
+          <p class="mb-0"><strong>Temps:</strong> 24-48h (Península)</p>
+        </div>
+        <button class="btn-pagar w-100">ANAR A PAGAR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTINGUT PRINCIPAL -->
   <main>
+    <!-- IMATGE PRINCIPAL -->
     <div class="img-container">
-      <img src="img/principal.jpg" alt="Imatge gran" class="main-img">
+      <img src="img/principal2.jpg" alt="Imatge gran" class="main-img" loading="lazy">
     </div>
 
-   <!-- CERCA-->
-  </main>
-  <div class="cercador-container" id="cercador-section">
-    <img src="img/lupa.png" alt="Icona de lupa" class="lupa-icon">
-    <input type="text" placeholder="CERCA" class="search-input">
-    <img src="img/fletxaavall.png" alt="Fletxa avall" class="arrow-icon">
-  </div>
-  <section class="login-section" id="login-section">
-    <div class="container py-4">
-      <h2>Inicieu sessió</h2>
-      <p>Si us plau, introdueix el teu correu i contrasenya:</p>
-      <a href="#">No tens compte? Crear compte</a>
-      <form class="login-form">
-        <input type="email" placeholder="Correu electrònic">
-        <input type="password" placeholder="Contrasenya">
-        <a href="#">Heu oblidat la vostra contrasenya?</a>
-        <button type="submit">ACCEDIR</button>
-      </form>
+    <!-- CERCA -->
+    <div class="cercador-container" id="cercador-section">
+      <img src="img/lupa.png" alt="Lupa" class="lupa-icon">
+      <input type="text" placeholder="CERCA" class="search-input">
+      <img src="img/fletxaavall.png" alt="Fletxa" class="arrow-icon">
     </div>
-  </section>
 
-  <!--secció HOME -->
-  <main>
-    <div class="img-container">
-      <img src="img/portada home.jpg" alt="Imatge gran" class="main-img">
-    </div>
-  </main>
-  <section class="photos-section home-section" id="home-section"> 
-      <div class="section-head">
-        <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
-        <h2 class="section-title">HOME</h2>
-        <h2 class="section-title">ELS + CLÀSSICS</h2>
-      </div>
-      <div class="row g-1">
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
+    <!-- LOGIN -->
+    <section class="login-section" id="login-section">
+      <div class="container py-4">
+        <h2>Inicieu sessió</h2>
+        <p>Si us plau, introdueix el teu correu i contrasenya:</p>
+        <form class="login-form" id="loginForm">
+          <input type="email" id="emailInput" placeholder="Correu electrònic" required>
+          <input type="password" id="passwordInput" placeholder="Contrasenya" required minlength="6">
+          <div class="login-links">
+            <a href="#">Crear compte</a>
+            <a href="#">Heu oblidat la contrasenya?</a>
           </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="photo-item">
-            <div class="photo-frame">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-   <!--secció DONA -->
-<main>
-  <div class="img-container">
-    <img src="img/portada dona.jpg" alt="Imatge gran" class="main-img">
-  </div>
-</main>
-
-<section class="photos-section dona-section" id="dona-section">
-  <div class="section-head">
-    <img src="img/fletxadreta.png" alt="Imatge fletxa" class="arrow-image">
-    <h2 class="section-title">DONA</h2>
-    <h2 class="section-title">LES + CLÀSSIQUES</h2>
-  </div>
-  <div class="row g-4"> <!-- Restaura el gap original -->
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-6 col-md-3">
-      <div class="photo-item">
-        <div class="photo-frame">
-          <!-- Elimino la imatge prova1.jpg -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <!-- COLLECIONS -->
-<section class="photos-section col-sections" id="colleccions-section">
-  <h2 class="colleccions">COL·LECCIONS</h2>
-  <div class="row g-0 full-width-row">
-    <div class="col-4 p-0">
-      <img src="img/colleccio1.jpg" class="img-fluid collection-img" alt="Col·lecció 1">
-    </div>
-    <div class="col-4 p-0">
-      <img src="img/colleccio2.jpg" class="img-fluid collection-img" alt="Col·lecció 2">
-    </div>
-    <div class="col-4 p-0">
-      <img src="img/colleccio3.jpg" class="img-fluid collection-img" alt="Col·lecció 3">
-    </div>
-  </div>
-</section>
-
-
-
-  <footer class="main-footer">
-    <div class="footer-columns">
-      <div class="footer-col"><p>BOTIGUES</p></div>
-      <div class="footer-col"><p>POLÍTICA DE PRIVADESA<br>TERMES</p></div>
-      <div class="footer-col"><p>DEVOLUCIONS<br>SEGUIMENT DE COMANDA<br>FAQ<br>CONTACTE</p></div>
-      <div class="footer-col">
-        <p><strong>SUBSCRIU-TE</strong><br>CONNECTA AMB NOSALTRES I<br>CAMINA AL DIA AMB CAL MITJÓ</p>
-        <form class="footer-form">
-          <input type="email" placeholder="Correu electrònic">
-          <button type="submit">ACCEDIR</button>
-          <div class="footer-policy">
-            <input type="checkbox" id="policy">
-            <label for="policy">I agree to receive content from Cal Mitjó via email and have read and accept the Privacy Policy.</label>
-          </div>
+          <button type="submit" class="btn-login">ACCEDIR</button>
         </form>
       </div>
+    </section>
+
+    <!-- PORTADA HOME -->
+    <div class="img-container">
+      <img src="img/portada home2.jpg" alt="Portada Home" class="main-img" loading="lazy">
     </div>
-    <div class="footer-brand">CAL MITJÓ</div>
-  </footer>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const header = document.querySelector('.main-header');
-        const logoCenter = document.getElementById('logoCenter');
-        const logoImg = document.querySelector('.logo-img');
-        const logoImgScroll = document.querySelector('.logo-img-scroll');
+    <!-- SECCIÓ HOME -->
+    <section class="photos-section home-section" id="home-section">
+      <div class="section-head justify-content-between">
+        <div class="d-flex align-items-center">
+          <img src="img/fletxadreta.png" alt="Fletxa" class="arrow-image">
+          <h2 class="section-title">HOME</h2>
+        </div>
+        <h2 class="section-title text-end">ELS + CLÀSSICS</h2>
+      </div>
+      <div class="row g-4">
+        <!-- 8 PRODUCTES HOME -->
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Negre" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Negre" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Negre</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Gris" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Gris" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Gris</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Blau" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Blau" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Blau</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Marró" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Marró" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Marró</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Beix" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Beix" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Beix</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Verd" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Verd" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Verd</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Vermell" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Vermell" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Vermell</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Home Rosa" data-preu="19,95" data-img="img/mockuphome.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Rosa" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Home Rosa</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Funció per gestionar l'efecte de scroll i fixar el header
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                header.classList.add('fixed-header');
-                logoImg.style.display = 'none'; // Amaga el logo original
-                logoImgScroll.style.display = 'block'; // Mostra el logo de scroll
-            } else {
-                header.classList.remove('fixed-header');
-                logoImg.style.display = 'block'; // Torna a mostrar el logo original
-                logoImgScroll.style.display = 'none'; // Amaga el logo de scroll
-            }
+    <!-- PORTADA DONA -->
+    <div class="img-container">
+      <img src="img/portada dona2.jpg" alt="Portada Dona" class="main-img" loading="lazy">
+    </div>
+
+    <!-- SECCIÓ DONA -->
+    <section class="photos-section dona-section" id="dona-section">
+      <div class="section-head justify-content-between">
+        <div class="d-flex align-items-center">
+          <img src="img/fletxadreta.png" alt="Fletxa" class="arrow-image">
+          <h2 class="section-title">DONA</h2>
+        </div>
+        <h2 class="section-title text-end">LES + CLÀSSIQUES</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Negre" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Negre" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Negre</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Repeteix els altres 7 productes iguals -->
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Gris" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Gris" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Gris</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Blau" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Blau" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Blau</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Marró" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Marró" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Marró</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Beix" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Beix" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Beix</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Verd" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Verd" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Verd</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Vermell" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Vermell" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Vermell</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjó Dona Rosa" data-preu="19,95" data-img="img/mockupdona.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Rosa" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjó Dona Rosa</span>
+                  <span class="product-price">19,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COL·LECCIONS -->
+    <section class="photos-section col-sections" id="colleccions-section">
+      <h2 class="colleccions">COL·LECCIONS</h2>
+      <div class="row g-0 full-width-row">
+        <div class="col-4 p-0">
+          <img src="img/colleccio1.jpg" class="img-fluid collection-img modal-trigger" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Nadal Màgic" data-desc="Mitjons amb motius nadalencs: rens, estrelles i neu. Perfectes per regalar." alt="Col·lecció Nadal" loading="lazy">
+        </div>
+        <div class="col-4 p-0">
+          <img src="img/colleccio2.jpg" class="img-fluid collection-img modal-trigger" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Tardor Càlida" data-desc="Tons terrosos, fulles i textures suaus. Ideal per dies frescos." alt="Col·lecció Tardor" loading="lazy">
+        </div>
+        <div class="col-4 p-0">
+          <img src="img/colleccio3.jpg" class="img-fluid collection-img modal-trigger" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Halloween Terrorífic" data-desc="Carabasses, fantasmes i ratpenats. Per una nit plena de misteri." alt="Col·lecció Halloween" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL COL·LECCIÓ -->
+    <div class="modal fade" id="collectionModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-body p-0">
+            <div class="row g-0">
+              <div class="col-md-7">
+                <img id="modalImg" src="" class="img-fluid w-100" style="height: 100%; object-fit: cover;">
+              </div>
+              <div class="col-md-5 p-4 d-flex flex-column justify-content-center">
+                <h3 id="modalTitle" class="mb-3"></h3>
+                <p id="modalDesc" class="mb-4"></p>
+                <button class="btn btn-tertiary text-primary fw-bold" data-bs-dismiss="modal">Tancar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTADA CAL MITJONET -->
+    <div class="img-container">
+      <img src="img/portadacalmitjonet.jpg" alt="Portada Cal Mitjonet" class="main-img" loading="lazy">
+    </div>
+
+    <!-- SECCIÓ CAL MITJONET -->
+    <section class="photos-section calmitjonet-section" id="calmitjonet-section">
+      <div class="section-head">
+        <h2 class="section-title">
+          <img src="img/calmitjonet-33-33.png" alt="Logo Cal Mitjonet" class="logo-mitjonet">
+        </h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Estrella" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Estrella" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Estrella</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Repeteix els altres 7 productes iguals -->
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Cor" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Cor" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Cor</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Ratlla" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Ratlla" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Ratlla</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Flor" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Flor" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Flor</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Llum" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Llum" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Llum</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Arc" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Arc" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Arc</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Neu" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Neu" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Neu</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card" data-nom="Mitjonet Sol" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+            <div class="product-bg-solid"></div>
+            <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Sol" loading="lazy"></div>
+            <div class="product-info">
+              <div class="info-container">
+                <div class="info-default">
+                  <span class="product-name">Mitjonet Sol</span>
+                  <span class="product-price">9,95 €</span>
+                </div>
+                <div class="info-hover">
+                  <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="btn-add-cart">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- AJUDA -->
+    <section class="help-section bg-secondary" id="ajuda-section">
+      <div class="container py-5">
+        <h2 class="help-title text-primary mb-4">AJUDA</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="help-card">
+              <h5>Com fer una comanda</h5>
+              <p>Selecciona els productes, afegeix-los a la cistella i segueix els passos de pagament.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="help-card">
+              <h5>Mètodes de pagament</h5>
+              <p>Targeta, Bizum, PayPal i contra reemborsament.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="help-card">
+              <h5>Enviament</h5>
+              <p>24-48h a Península. Gratis a partir de 50€.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="help-card">
+              <h5>Devolucions</h5>
+              <p>14 dies per devolució gratuïta.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#contacte-section" class="btn-contacte-original">Contacta'ns</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTE (nou disseny) -->
+    <section class="contact-section" id="contacte-section">
+      <div class="container py-5">
+        <h2 class="contact-title mb-2">CONTACTE</h2>
+        <p class="contact-subtitle mb-4">Escriu-nos i t'ajudarem en menys de 24h</p>
+        <form class="contact-form mx-auto" style="max-width: 500px;">
+          <div class="form-group mb-3">
+            <input type="text" placeholder="Nom complet" required>
+          </div>
+          <div class="form-group mb-3">
+            <input type="email" placeholder="Correu electrònic" required>
+          </div>
+          <div class="form-group mb-4">
+            <textarea rows="4" placeholder="Com et podem ajudar?" required></textarea>
+          </div>
+          <button type="submit" class="btn-contacte-luxe w-100">ENVIAR MISSATGE</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+        <!-- FOOTER (vertical, subscriu-te en 1 línia, línia fina) -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Botigues</h4>
+          <p>Barcelona</p>
+          <p>Girona</p>
+          <p>Lleida</p>
+          <p>Tarragona</p>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#"><span>Política de privadesa</span></a>
+          <a href="#"><span>Termes i condicions</span></a>
+          <a href="#"><span>Política de cookies</span></a>
+        </div>
+        <div class="footer-col">
+          <h4>Suport</h4>
+          <a href="#"><span>Devolucions</span></a>
+          <a href="#"><span>Seguiment de comanda</span></a>
+          <a href="#ajuda-section"><span>FAQ</span></a>
+          <a href="mailto:ajuda@calmitjo.cat"><span>Contacte</span></a>
+        </div>
+        <div class="footer-col">
+          <h4>Subscriu-te</h4>
+          <p>Connecta amb nosaltres i camina al dia amb Cal Mitjó</p>
+          <form class="footer-form d-flex flex-column gap-2">
+            <input type="email" placeholder="Correu electrònic" required>
+            <div class="footer-policy-inline d-flex align-items-center gap-2 flex-wrap">
+              <input type="checkbox" id="policy" required class="flex-shrink-0">
+              <label for="policy" class="mb-0 small flex-grow-1">
+                Accepto rebre contingut de Cal Mitjó per email i he llegit la 
+                <a href="#" class="text-white text-decoration-underline">Política de Privadesa</a>.
+              </label>
+              <button type="submit" class="btn-subscribe flex-shrink-0">SUBSCRIURE</button>
+            </div>
+          </form>
+          <div class="social-links mt-3 d-flex justify-content-start gap-3">
+            <a href="#"><img src="img/icon-instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/icon-facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/icon-tiktok.png" alt="TikTok"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-brand">CAL MITJÓ</div>
+    </footer>
+
+  <!-- SCRIPT COMPLET -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cistellaOffcanvasEl = document.getElementById('cistellaOffcanvas');
+      const cistellaOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(cistellaOffcanvasEl);
+      const resumOffcanvasEl = document.getElementById('resumOffcanvas');
+      const resumOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(resumOffcanvasEl);
+
+      // HEADER FIX
+      const header = document.querySelector('.main-header');
+      const logoCenter = document.getElementById('logoCenter');
+      const logoImg = document.querySelector('.logo-img');
+      const logoImgScroll = document.querySelector('.logo-img-scroll');
+
+      if (header && logoCenter) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 100) {
+            header.classList.add('fixed-header');
+            logoImg.style.display = 'none';
+            logoImgScroll.style.display = 'block';
+          } else {
+            header.classList.remove('fixed-header');
+            logoImg.style.display = 'block';
+            logoImgScroll.style.display = 'none';
+          }
+        });
+        logoCenter.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+
+      // SCROLL AMB OFFSET
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (!href || href === '#') return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (!target) return;
+          const offset = parseInt(this.getAttribute('data-offset') || '0');
+          const headerHeight = document.querySelector('.main-header.fixed-header')?.offsetHeight || 0;
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.pageYOffset - headerHeight - offset,
+            behavior: 'smooth'
+          });
+          const offcanvas = document.querySelector('#offcanvasMenu');
+          if (offcanvas && offcanvas.classList.contains('show')) {
+            bootstrap.Offcanvas.getInstance(offcanvas).hide();
+          }
+        });
+      });
+
+      // CISTELLA: CONTADOR
+      function updateCartCount() {
+        let total = 0;
+        document.querySelectorAll('.cistella-item').forEach(item => {
+          total += parseInt(item.querySelector('.qty').textContent);
+        });
+        const badge = document.querySelector('#cistellaOffcanvas .badge');
+        if (badge) badge.textContent = total + ' ' + (total === 1 ? 'article' : 'articles');
+        checkEmptyCart();
+      }
+
+      function updateSubtotal() {
+        let total = 0;
+        document.querySelectorAll('.cistella-item').forEach(item => {
+          const price = parseFloat(item.querySelector('.cistella-preu').textContent.replace(' €', '').replace(',', '.'));
+          const qty = parseInt(item.querySelector('.qty').textContent);
+          total += price * qty;
+        });
+        document.querySelector('.total-preu').textContent = total.toFixed(2).replace('.', ',') + ' €';
+      }
+
+      function checkEmptyCart() {
+        const items = document.querySelectorAll('.cistella-item').length;
+        const empty = document.querySelector('.cistella-empty');
+        const footer = document.querySelector('.cistella-footer');
+        if (items === 0) {
+          empty.classList.remove('d-none');
+          footer.classList.add('d-none');
+        } else {
+          empty.classList.add('d-none');
+          footer.classList.remove('d-none');
+        }
+      }
+
+      // AFEGIR PRODUCTE
+      document.querySelectorAll('.product-card').forEach(card => {
+        const addBtn = card.querySelector('.btn-add-cart');
+        const sizeBtns = card.querySelectorAll('.size-btn');
+        let selectedSize = 'M';
+
+        sizeBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            sizeBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selectedSize = btn.dataset.size;
+          });
         });
 
-        // Clic per tornar a l'inici
-        logoCenter.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        addBtn.addEventListener('click', () => {
+          const nom = card.dataset.nom;
+          const preu = card.dataset.preu;
+          const img = card.dataset.img;
+          const fullName = `${nom} (Talla ${selectedSize})`;
+
+          let existing = null;
+          document.querySelectorAll('.cistella-item').forEach(item => {
+            if (item.querySelector('.cistella-nom').textContent === fullName) existing = item;
+          });
+
+          if (existing) {
+            const qty = existing.querySelector('.qty');
+            qty.textContent = parseInt(qty.textContent) + 1;
+          } else {
+            const item = document.createElement('div');
+            item.className = 'cistella-item';
+            item.innerHTML = `
+              <div class="cistella-img"><img src="${img}" alt="${nom}"></div>
+              <div class="cistella-info">
+                <h6 class="cistella-nom">${fullName}</h6>
+                <p class="cistella-preu">${preu} €</p>
+                <div class="cistella-quantitat">
+                  <button class="btn-qty btn-minus">-</button>
+                  <span class="qty">1</span>
+                  <button class="btn-qty btn-plus">+</button>
+                </div>
+              </div>
+              <button class="btn-eliminar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            `;
+            document.querySelector('.cistella-list').appendChild(item);
+
+            item.querySelector('.btn-plus').addEventListener('click', () => {
+              const qty = item.querySelector('.qty');
+              qty.textContent = parseInt(qty.textContent) + 1;
+              updateSubtotal(); updateCartCount();
             });
+            item.querySelector('.btn-minus').addEventListener('click', () => {
+              const qty = item.querySelector('.qty');
+              if (parseInt(qty.textContent) > 1) {
+                qty.textContent = parseInt(qty.textContent) - 1;
+              } else {
+                item.remove();
+              }
+              updateSubtotal(); updateCartCount();
+            });
+            item.querySelector('.btn-eliminar').addEventListener('click', () => {
+              item.remove();
+              updateSubtotal(); updateCartCount();
+            });
+          }
+
+          updateSubtotal();
+          updateCartCount();
+          
+          cistellaOffcanvas.show();
         });
+      });
+
+      // FINALITZAR COMPRA
+      document.querySelector('.btn-finalitzar').addEventListener('click', () => {
+        generateResum();
+        cistellaOffcanvas.hide();
+        setTimeout(() => resumOffcanvas.show(), 300);
+      });
+
+      function generateResum() {
+        const list = document.querySelector('.resum-list');
+        list.innerHTML = '';
+        let subtotal = 0;
+        document.querySelectorAll('.cistella-item').forEach(item => {
+          const img = item.querySelector('.cistella-img img').src;
+          const nom = item.querySelector('.cistella-nom').textContent;
+          const preu = item.querySelector('.cistella-preu').textContent;
+          const qty = item.querySelector('.qty').textContent;
+          const total = (parseFloat(preu.replace(' €', '').replace(',', '.')) * qty).toFixed(2).replace('.', ',');
+          subtotal += parseFloat(preu.replace(' €', '').replace(',', '.')) * qty;
+
+          const div = document.createElement('div');
+          div.className = 'resum-item';
+          div.innerHTML = `
+            <div class="d-flex align-items-center gap-3 p-3 border-bottom border-light-small">
+              <div class="resum-img"><img src="${img}" alt="${nom}"></div>
+              <div class="flex-grow-1">
+                <h6 class="mb-1 text-primary">${nom}</h6>
+                <small class="text-white-50">${qty} × ${preu}</small>
+              </div>
+              <div class="text-end"><strong class="text-tertiary">${total} €</strong></div>
+            </div>
+          `;
+          list.appendChild(div);
+        });
+        const str = subtotal.toFixed(2).replace('.', ',');
+        document.querySelector('.resum-subtotal').textContent = str + ' €';
+        document.querySelector('.resum-total-preu').textContent = str + ' €';
+      }
+
+      // LOGIN ÈXIT
+      document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+
+        if (email && password.length >= 6 && email.includes('@') && email.includes('.')) {
+          const alert = document.getElementById('loginSuccessAlert');
+          alert.classList.remove('d-none');
+          setTimeout(() => alert.classList.add('d-none'), 4000);
+          this.reset();
+        }
+      });
+
+      // MODAL COL·LECCIÓ
+      document.querySelectorAll('.modal-trigger').forEach(img => {
+        img.addEventListener('click', function() {
+          const modal = document.getElementById('collectionModal');
+          modal.querySelector('#modalImg').src = this.src;
+          modal.querySelector('#modalTitle').textContent = this.dataset.title;
+          modal.querySelector('#modalDesc').textContent = this.dataset.desc;
+        });
+      });
+
+      updateSubtotal();
+    updateCartCount();
+
+    // === NOU: Tancar cistella al fer "Continuar comprant" ===
+    document.getElementById('continueShopping')?.addEventListener('click', function () {
+      const cistellaOffcanvasEl = document.getElementById('cistellaOffcanvas');
+      const cistellaOffcanvas = bootstrap.Offcanvas.getInstance(cistellaOffcanvasEl);
+      if (cistellaOffcanvas) {
+        cistellaOffcanvas.hide();
+      }
     });
-  </script>
-  
+
+  });
+</script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
 </body>
 </html>
