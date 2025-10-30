@@ -6,6 +6,9 @@
   <meta name="author" content="Paula Baiges i Oriol Vendrell">
   <link rel="icon" href="img/portada-32.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- GSAP + SCROLLTRIGGER -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.typekit.net/rwq5qki.css">
@@ -19,7 +22,7 @@
   </div>
 
   <!-- HEADER ESCRIPTORI -->
-  <header class="main-header d-none d-lg-block">
+  <header class="main-header d-none d-lg-block gsap-header-fixed">
     <nav class="header-nav" role="navigation" aria-label="Menú principal">
       <div class="nav-inner">
         <ul class="menu menu-left"></ul>
@@ -115,7 +118,7 @@
 
   <!-- RESUM DE COMPRA -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="resumOffcanvas" aria-labelledby="resumLabel">
-    <div class="offcanvas-header bg-secondary text-primary">
+    <div class="offcanvas-header bg-secondary">
       <h5 class="offcanvas-title" id="resumLabel">RESUM DE LA COMANDA</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tancar"></button>
     </div>
@@ -144,7 +147,7 @@
   <!-- CONTINGUT PRINCIPAL -->
   <main>
     <!-- IMATGE PRINCIPAL -->
-    <div class="img-container">
+    <div class="img-container gsap-reveal">
       <img src="img/principal2.jpg" alt="Imatge gran" class="main-img" loading="lazy">
     </div>
 
@@ -156,7 +159,7 @@
     </div>
 
     <!-- LOGIN -->
-    <section class="login-section" id="login-section">
+    <section class="login-section gsap-reveal" id="login-section">
       <div class="container py-4">
         <h2>Inicieu sessió</h2>
         <p>Si us plau, introdueix el teu correu i contrasenya:</p>
@@ -167,29 +170,29 @@
             <a href="#">Crear compte</a>
             <a href="#">Heu oblidat la contrasenya?</a>
           </div>
-          <button type="submit" class="btn-login">ACCEDIR</button>
+          <button type="submit" class="btn-login gsap-hover-lift">ACCEDIR</button>
         </form>
       </div>
     </section>
 
     <!-- PORTADA HOME -->
-    <div class="img-container">
+    <div class="img-container gsap-reveal">
       <img src="img/portada home2.jpg" alt="Portada Home" class="main-img" loading="lazy">
     </div>
 
     <!-- SECCIÓ HOME -->
-    <section class="photos-section home-section" id="home-section">
+    <section class="photos-section home-section gsap-reveal" id="home-section">
       <div class="section-head justify-content-between">
         <div class="d-flex align-items-center">
-          <img src="img/fletxadreta.png" alt="Fletxa" class="arrow-image">
-          <h2 class="section-title">HOME</h2>
+          <img src="img/fletxadreta.png" alt="Fletxa" class="arrow-image gsap-reveal">
+          <h2 class="section-title gsap-reveal">HOME</h2>
         </div>
-        <h2 class="section-title text-end">ELS + CLÀSSICS</h2>
+        <h2 class="section-title text-end gsap-reveal">ELS + CLÀSSICS</h2>
       </div>
       <div class="row g-4">
         <!-- 8 PRODUCTES HOME -->
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Negre" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Negre" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Negre" loading="lazy"></div>
             <div class="product-info">
@@ -212,7 +215,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Gris" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Gris" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Gris" loading="lazy"></div>
             <div class="product-info">
@@ -235,7 +238,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Blau" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Blau" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Blau" loading="lazy"></div>
             <div class="product-info">
@@ -258,7 +261,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Marró" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Marró" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Marró" loading="lazy"></div>
             <div class="product-info">
@@ -281,7 +284,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Beix" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Beix" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Beix" loading="lazy"></div>
             <div class="product-info">
@@ -304,7 +307,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Verd" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Verd" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Verd" loading="lazy"></div>
             <div class="product-info">
@@ -327,7 +330,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Vermell" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Vermell" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Vermell" loading="lazy"></div>
             <div class="product-info">
@@ -350,7 +353,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Home Rosa" data-preu="19,95" data-img="img/mockuphome.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Home Rosa" data-preu="19,95" data-img="img/mockuphome.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockuphome.png" alt="Mitjó Home Rosa" loading="lazy"></div>
             <div class="product-info">
@@ -376,22 +379,22 @@
     </section>
 
     <!-- PORTADA DONA -->
-    <div class="img-container">
+    <div class="img-container gsap-reveal">
       <img src="img/portada dona2.jpg" alt="Portada Dona" class="main-img" loading="lazy">
     </div>
 
     <!-- SECCIÓ DONA -->
-    <section class="photos-section dona-section" id="dona-section">
+    <section class="photos-section dona-section gsap-reveal" id="dona-section">
       <div class="section-head justify-content-between">
         <div class="d-flex align-items-center">
-          <img src="img/fletxadreta.png" alt="Fletxa" class="arrow-image">
-          <h2 class="section-title">DONA</h2>
+          <img src="img/fletxadreta.png" alt="Fletxa" class="arrow-image gsap-reveal">
+          <h2 class="section-title gsap-reveal">DONA</h2>
         </div>
-        <h2 class="section-title text-end">LES + CLÀSSIQUES</h2>
+        <h2 class="section-title text-end gsap-reveal">LES + CLÀSSIQUES</h2>
       </div>
       <div class="row g-4">
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Negre" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Negre" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Negre" loading="lazy"></div>
             <div class="product-info">
@@ -413,9 +416,8 @@
             </div>
           </div>
         </div>
-        <!-- Repeteix els altres 7 productes iguals -->
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Gris" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Gris" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Gris" loading="lazy"></div>
             <div class="product-info">
@@ -438,7 +440,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Blau" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Blau" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Blau" loading="lazy"></div>
             <div class="product-info">
@@ -461,7 +463,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Marró" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Marró" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Marró" loading="lazy"></div>
             <div class="product-info">
@@ -484,7 +486,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Beix" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Beix" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Beix" loading="lazy"></div>
             <div class="product-info">
@@ -507,7 +509,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Verd" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Verd" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Verd" loading="lazy"></div>
             <div class="product-info">
@@ -530,7 +532,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Vermell" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Vermell" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Vermell" loading="lazy"></div>
             <div class="product-info">
@@ -553,7 +555,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjó Dona Rosa" data-preu="19,95" data-img="img/mockupdona.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjó Dona Rosa" data-preu="19,95" data-img="img/mockupdona.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupdona.png" alt="Mitjó Dona Rosa" loading="lazy"></div>
             <div class="product-info">
@@ -579,17 +581,17 @@
     </section>
 
     <!-- COL·LECCIONS -->
-    <section class="photos-section col-sections" id="colleccions-section">
-      <h2 class="colleccions">COL·LECCIONS</h2>
+    <section class="photos-section col-sections gsap-reveal" id="colleccions-section">
+      <h2 class="colleccions gsap-reveal">COL·LECCIONS</h2>
       <div class="row g-0 full-width-row">
         <div class="col-4 p-0">
-          <img src="img/colleccio1.jpg" class="img-fluid collection-img modal-trigger" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Nadal Màgic" data-desc="Mitjons amb motius nadalencs: rens, estrelles i neu. Perfectes per regalar." alt="Col·lecció Nadal" loading="lazy">
+          <img src="img/colleccio1.jpg" class="img-fluid collection-img modal-trigger gsap-scroll-reveal gsap-hover-zoom" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Nadal Màgic" data-desc="Mitjons amb motius nadalencs: rens, estrelles i neu. Perfectes per regalar." alt="Col·lecció Nadal" loading="lazy">
         </div>
         <div class="col-4 p-0">
-          <img src="img/colleccio2.jpg" class="img-fluid collection-img modal-trigger" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Tardor Càlida" data-desc="Tons terrosos, fulles i textures suaus. Ideal per dies frescos." alt="Col·lecció Tardor" loading="lazy">
+          <img src="img/colleccio2.jpg" class="img-fluid collection-img modal-trigger gsap-scroll-reveal gsap-hover-zoom" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Tardor Càlida" data-desc="Tons terrosos, fulles i textures suaus. Ideal per dies frescos." alt="Col·lecció Tardor" loading="lazy">
         </div>
         <div class="col-4 p-0">
-          <img src="img/colleccio3.jpg" class="img-fluid collection-img modal-trigger" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Halloween Terrorífic" data-desc="Carabasses, fantasmes i ratpenats. Per una nit plena de misteri." alt="Col·lecció Halloween" loading="lazy">
+          <img src="img/colleccio3.jpg" class="img-fluid collection-img modal-trigger gsap-scroll-reveal gsap-hover-zoom" data-bs-toggle="modal" data-bs-target="#collectionModal" data-title="Halloween Terrorífic" data-desc="Carabasses, fantasmes i ratpenats. Per una nit plena de misteri." alt="Col·lecció Halloween" loading="lazy">
         </div>
       </div>
     </section>
@@ -606,7 +608,7 @@
               <div class="col-md-5 p-4 d-flex flex-column justify-content-center">
                 <h3 id="modalTitle" class="mb-3"></h3>
                 <p id="modalDesc" class="mb-4"></p>
-                <button class="btn btn-tertiary text-primary fw-bold" data-bs-dismiss="modal">Tancar</button>
+                <button class="btn btn-tertiary fw-bold gsap-hover-lift" data-bs-dismiss="modal">Tancar</button>
               </div>
             </div>
           </div>
@@ -615,20 +617,20 @@
     </div>
 
     <!-- PORTADA CAL MITJONET -->
-    <div class="img-container">
+    <div class="img-container gsap-reveal">
       <img src="img/portadacalmitjonet.jpg" alt="Portada Cal Mitjonet" class="main-img" loading="lazy">
     </div>
 
     <!-- SECCIÓ CAL MITJONET -->
-    <section class="photos-section calmitjonet-section" id="calmitjonet-section">
+    <section class="photos-section calmitjonet-section gsap-reveal" id="calmitjonet-section">
       <div class="section-head">
-        <h2 class="section-title">
+        <h2 class="section-title gsap-reveal">
           <img src="img/calmitjonet-33-33.png" alt="Logo Cal Mitjonet" class="logo-mitjonet">
         </h2>
       </div>
       <div class="row g-4">
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Estrella" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Estrella" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Estrella" loading="lazy"></div>
             <div class="product-info">
@@ -650,9 +652,8 @@
             </div>
           </div>
         </div>
-        <!-- Repeteix els altres 7 productes iguals -->
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Cor" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Cor" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Cor" loading="lazy"></div>
             <div class="product-info">
@@ -675,7 +676,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Ratlla" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Ratlla" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Ratlla" loading="lazy"></div>
             <div class="product-info">
@@ -698,7 +699,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Flor" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Flor" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Flor" loading="lazy"></div>
             <div class="product-info">
@@ -721,7 +722,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Llum" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Llum" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Llum" loading="lazy"></div>
             <div class="product-info">
@@ -744,7 +745,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Arc" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Arc" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Arc" loading="lazy"></div>
             <div class="product-info">
@@ -767,7 +768,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Neu" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Neu" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Neu" loading="lazy"></div>
             <div class="product-info">
@@ -790,7 +791,7 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="product-card" data-nom="Mitjonet Sol" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
+          <div class="product-card gsap-info-swap gsap-reveal" data-nom="Mitjonet Sol" data-preu="9,95" data-img="img/mockupcalmitjonet.png">
             <div class="product-bg-solid"></div>
             <div class="product-img"><img src="img/mockupcalmitjonet.png" alt="Mitjonet Sol" loading="lazy"></div>
             <div class="product-info">
@@ -815,72 +816,73 @@
       </div>
     </section>
 
-<!-- AJUDA  -->
-<section class="help-section" id="ajuda-section">
-  <div class="container py-5">
-    <h2 class="help-title">AJUDA</h2>
-    <p class="help-subtitle">Tot el que necessites saber. Senzill i clar.</p>
+    <!-- AJUDA -->
+    <section class="help-section gsap-reveal" id="ajuda-section">
+      <div class="container py-5">
+        <h2 class="help-title gsap-reveal">AJUDA</h2>
+        <p class="help-subtitle gsap-reveal">Tot el que necessites saber. Senzill i clar.</p>
 
-    <div class="accordion help-accordion" id="helpAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-            Com fer una comanda
-          </button>
-        </h2>
-        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
-          <div class="accordion-body">
-            Selecciona els productes, afegeix-los a la cistella i segueix els passos de pagament. Fàcil i ràpid.
+        <div class="accordion help-accordion" id="helpAccordion">
+          <div class="accordion-item gsap-reveal">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Com fer una comanda
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Selecciona els productes, afegeix-los a la cistella i segueix els passos de pagament. Fàcil i ràpid.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item gsap-reveal">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Mètodes de pagament
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                Targeta, Bizum, PayPal o contra reemborsament. Tria el que més t’agradi.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item gsap-reveal">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Enviament
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                24-48h a Península. Gratis a partir de 50€. Illes: 3-5 dies.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item gsap-reveal">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Devolucions
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+              <div class="accordion-body">
+                14 dies per devolució gratuïta. Sense preguntes.
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-            Mètodes de pagament
-          </button>
-        </h2>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
-          <div class="accordion-body">
-            Targeta, Bizum, PayPal o contra reemborsament. Tria el que més t’agradi.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-            Enviament
-          </button>
-        </h2>
-        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
-          <div class="accordion-body">
-            24-48h a Península. Gratis a partir de 50€. Illes: 3-5 dies.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-            Devolucions
-          </button>
-        </h2>
-        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
-          <div class="accordion-body">
-            14 dies per devolució gratuïta. Sense preguntes.
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
+    </section>
 
     <!-- CONTACTE -->
-    <section class="contact-section" id="contacte-section">
+    <section class="contact-section gsap-reveal" id="contacte-section">
       <div class="container py-5">
-        <h2 class="contact-title mb-2">CONTACTE</h2>
-        <p class="contact-subtitle mb-4">Escriu-nos i t'ajudarem en menys de 24h</p>
+        <h2 class="contact-title gsap-reveal mb-2">CONTACTE</h2>
+        <p class="contact-subtitle gsap-reveal mb-4">Escriu-nos i t'ajudarem en menys de 24h</p>
         <form class="contact-form mx-auto" style="max-width: 500px;">
           <div class="form-group mb-3">
             <input type="text" placeholder="Nom complet" required>
@@ -891,13 +893,13 @@
           <div class="form-group mb-4">
             <textarea rows="4" placeholder="Com et podem ajudar?" required></textarea>
           </div>
-          <button type="submit" class="btn-contacte-luxe w-100">ENVIAR MISSATGE</button>
+          <button type="submit" class="btn-contacte-luxe w-100 gsap-hover-lift">ENVIAR MISSATGE</button>
         </form>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="main-footer">
+    <footer class="main-footer gsap-reveal">
       <div class="footer-container">
         <div class="footer-col">
           <h4>Botigues</h4>
@@ -943,6 +945,8 @@
       <div class="footer-divider"></div>
       <div class="footer-brand">CAL MITJÓ</div>
     </footer>
+
+  </main>
 
   <!-- SCRIPT COMPLET -->
   <script>
@@ -1130,7 +1134,7 @@
             <div class="d-flex align-items-center gap-3 p-3 border-bottom border-light-small">
               <div class="resum-img"><img src="${img}" alt="${nom}"></div>
               <div class="flex-grow-1">
-                <h6 class="mb-1 text-primary">${nom}</h6>
+                <h6 class="mb-1">${nom}</h6>
                 <small class="text-white-50">${qty} × ${preu}</small>
               </div>
               <div class="text-end"><strong class="text-tertiary">${total} €</strong></div>
@@ -1168,19 +1172,71 @@
       });
 
       updateSubtotal();
-    updateCartCount();
+      updateCartCount();
 
-    // === NOU: Tancar cistella al fer "Continuar comprant" ===
-    document.getElementById('continueShopping')?.addEventListener('click', function () {
-      const cistellaOffcanvasEl = document.getElementById('cistellaOffcanvas');
-      const cistellaOffcanvas = bootstrap.Offcanvas.getInstance(cistellaOffcanvasEl);
-      if (cistellaOffcanvas) {
+      // TANCAR CISTELLA AMB "CONTINUAR COMPRANT"
+      document.getElementById('continueShopping')?.addEventListener('click', function () {
         cistellaOffcanvas.hide();
-      }
-    });
+      });
 
-  });
-</script>
+      // GSAP ANIMACIONS
+      const gsap = window.gsap;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Entrada
+      gsap.to('.gsap-reveal', {
+        duration: 0.8,
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power3.out",
+        delay: 0.3
+      });
+
+      // Scroll reveal
+      gsap.utils.toArray('.gsap-scroll-reveal').forEach(el => {
+        gsap.to(el, {
+          duration: 0.8,
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      });
+
+      // Product card hover
+      document.querySelectorAll('.gsap-info-swap').forEach(card => {
+        const img = card.querySelector('.product-img');
+        const def = card.querySelector('.info-default');
+        const hov = card.querySelector('.info-hover');
+
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, { y: -8, duration: 0.4 });
+          gsap.to(img, { y: -30, duration: 0.6 });
+          gsap.to(def, { opacity: 0, duration: 0.3 });
+          gsap.to(hov, { opacity: 1, duration: 0.3 });
+        });
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, { y: 0, duration: 0.3 });
+          gsap.to(img, { y: 0, duration: 0.5 });
+          gsap.to(def, { opacity: 1, duration: 0.3 });
+          gsap.to(hov, { opacity: 0, duration: 0.3 });
+        });
+      });
+
+      // Header fixed
+      ScrollTrigger.create({
+        trigger: ".main-header",
+        start: "top top",
+        onEnter: () => document.querySelector('.main-header').classList.add('fixed'),
+        onLeaveBack: () => document.querySelector('.main-header').classList.remove('fixed')
+      });
+    });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

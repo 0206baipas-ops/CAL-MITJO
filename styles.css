@@ -1143,4 +1143,45 @@ body {
     .collection-img { height: 300px; }
     .cistella-item, .resum-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     .cistella-img img { width: 50px; height: 50px; }
+
+/* ========================================
+   ANIMACIONS GSAP – CLASES BASE (NO TOCAR)
+   ======================================== */
+.gsap-reveal,
+.gsap-scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.gsap-info-swap {
+  transform: translateY(0);
+}
+
+/* Hover lift per botons */
+.gsap-hover-lift {
+  transition: transform 0.3s ease;
+}
+.gsap-hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Zoom suau per imatges col·leccions */
+.gsap-hover-zoom {
+  transition: transform 0.6s ease;
+}
+.gsap-hover-zoom:hover {
+  transform: scale(1.03);
+}
+
+/* Header fixat (per evitar conflictes) */
+.gsap-header-fixed.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+
 }
